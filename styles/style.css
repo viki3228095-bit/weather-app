@@ -1,0 +1,162 @@
+/* ---------- Basic reset ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #0a0a0a;
+  color: #1f2937;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 16px;
+}
+
+/* ---------- Main card ---------- */
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: 0 8px 24px rgba(30, 64, 175, 0.12);
+}
+
+h1 {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ---------- Search form ---------- */
+form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+button {
+  padding: 10px 16px;
+  font-size: 1rem;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+button:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.4);
+  outline-offset: 2px;
+}
+
+/* ---------- Error message ---------- */
+.error {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+
+/* ---------- Weather result ---------- */
+.result h2 {
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.now {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+/* Light background so both the sun and the moon icons are visible */
+.now img {
+  width: 88px;
+  height: 88px;
+  background: #dbeafe;
+  border-radius: 50%;
+}
+
+.temp {
+  font-size: 2.6rem;
+  font-weight: 600;
+}
+
+.desc {
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 6px;
+}
+
+.small {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+/* ---------- Tomorrow's verdict ---------- */
+.verdict {
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.verdict .small {
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+.verdict.rain {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+.verdict.dry {
+  background: #fef3c7;
+  color: #78350f;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 420px) {
+  form {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kal Barish Hogi?</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Kal barish hogi? ☔</h1>
+    <form action="/weather" method="POST">
+      <input type="text" name="city" placeholder="City ka naam (e.g. Lahore)" required>
+      <button type="submit">Check karein</button>
+    </form>
+
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+
+    <% if (weather) { %>
+      <section class="result">
+        <h2><%= weather.city %></h2>
+        <div class="now">
+          <img src="https://openweathermap.org/img/wn/<%= weather.icon %>@2x.png" alt="">
+          <span class="temp"><%= weather.temp %>°C</span>
+        </div>
+        <p class="desc"><%= weather.desc %> · feels like <%= weather.feels %>°C</p>
+        <p class="small">Humidity <%= weather.humidity %>% · Hawa <%= weather.wind %> m/s</p>
+
+        <div class="verdict <%= weather.willRain ? 'rain' : 'dry' %>">
+          <% if (weather.willRain) { %>
+            Haan, kal barish ka imkaan hai! 🌧️ (chance: <%= weather.maxPop %>%)
+          <% } else { %>
+            Nahi, kal barish nahi lag rahi ☀️ (chance: <%= weather.maxPop %>%)
+          <% } %>
+          <div class="small">Kal ka temperature: <%= weather.tomorrowMin %>°C – <%= weather.tomorrowMax %>°C</div>
+        </div>
+      </section>
+    <% } %>
+  </main>
+</body>
+</html>
